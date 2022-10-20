@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis配置文件-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mszlu.blog.dao.mapper.TagMapper">
+
+    <sql id="all">
+        id,avatar,tag_name as tagName
+    </sql>
+
+    <!--        List<Tag> findTagsByArticleId(Long articleId);
+    In this file, id represents the method name,
+    parameterType represents the type of the input variable,
+    and resultType represents the type of the generic-->
+
+
+    <select id="findTagsByArticleId" parameterType="long" resultType="com.mszlu.blog.dao.pojo.Tag">
+        select  id,avatar,tag_name as tagName from ms_tag
+        where id in (select tag_id from ms_article_tag where article_id=#{articleId})
+    </select>
+</mapper>
