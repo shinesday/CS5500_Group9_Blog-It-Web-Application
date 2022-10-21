@@ -1,7 +1,7 @@
 {
-  "name": "blog-app",
+  "name": "blog-front-end",
   "version": "1.0.0",
-  "description": "blog-app",
+  "description": "blog-front-end",
   "author": "mszlu",
   "private": true,
   "scripts": {
