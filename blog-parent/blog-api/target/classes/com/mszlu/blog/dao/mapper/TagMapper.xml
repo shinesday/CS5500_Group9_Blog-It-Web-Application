@@ -12,10 +12,22 @@
     In this file, id represents the method name,
     parameterType represents the type of the input variable,
     and resultType represents the type of the generic-->
-
-
     <select id="findTagsByArticleId" parameterType="long" resultType="com.mszlu.blog.dao.pojo.Tag">
         select  id,avatar,tag_name as tagName from ms_tag
         where id in (select tag_id from ms_article_tag where article_id=#{articleId})
+    </select>
+
+<!--    List<Long> finHotsTagIds(int limit);-->
+    <select id="finHotsTagIds" parameterType="int" resultType="java.lang.Long">
+        select tag_id from ms_article_tag group by tag_id order by count(*) desc limit #{limit}
+    </select>
+
+<!--    List<Tag> findTagsByTagIds(List<Long> tagIds);-->
+    <select id="findTagsByTagIds" parameterType="list" resultType="com.mszlu.blog.dao.pojo.Tag">
+        select id,tag_name as tagName from ms_tag
+        where id in
+        <foreach collection="tagIds" item="tagId" separator="," open="(" close=")">
+            #{tagId}
+        </foreach>
     </select>
 </mapper>
