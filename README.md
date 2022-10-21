@@ -13,6 +13,7 @@ https://assets-global.website-files.com/5e593fb060cf877cf875dd1f/60a98115ba76be0
 ## Front-end
 
 We will use VUE.js to build our Front-end. 
+
 --Declarative Rendering: Vue extends standard HTML with a template syntax that allows us to declaratively describe HTML output based on JavaScript state.
 
 --Reactivity: Vue automatically tracks JavaScript state changes and efficiently updates the DOM when changes happen.
