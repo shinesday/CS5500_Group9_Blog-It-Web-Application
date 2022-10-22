@@ -57,15 +57,15 @@ INSERT INTO `ms_admin_permission` VALUES (2, 2, 1);
 DROP TABLE IF EXISTS `ms_article`;
 CREATE TABLE `ms_article`  (
   `id` bigint(0) NOT NULL AUTO_INCREMENT,
-  `comment_counts` int(0) NULL DEFAULT NULL COMMENT '评论数量',
-  `create_date` bigint(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `summary` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '简介',
-  `title` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '标题',
-  `view_counts` int(0) NULL DEFAULT NULL COMMENT '浏览数量',
-  `weight` int(0) NOT NULL COMMENT '是否置顶',
-  `author_id` bigint(0) NULL DEFAULT NULL COMMENT '作者id',
-  `body_id` bigint(0) NULL DEFAULT NULL COMMENT '内容id',
-  `category_id` int(0) NULL DEFAULT NULL COMMENT '类别id',
+  `comment_counts` int(0) NULL DEFAULT NULL COMMENT 'the number of comments',
+  `create_date` bigint(0) NULL DEFAULT NULL COMMENT 'the date of creation',
+  `summary` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'Introduction',
+  `title` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'Title',
+  `view_counts` int(0) NULL DEFAULT NULL COMMENT 'the number of views',
+  `weight` int(0) NOT NULL COMMENT 'the weight',
+  `author_id` bigint(0) NULL DEFAULT NULL COMMENT 'author id',
+  `body_id` bigint(0) NULL DEFAULT NULL COMMENT 'content id',
+  `category_id` int(0) NULL DEFAULT NULL COMMENT 'category id',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1405916999732707331 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -200,10 +200,10 @@ CREATE TABLE `ms_permission`  (
 -- ----------------------------
 -- Records of ms_permission
 -- ----------------------------
-INSERT INTO `ms_permission` VALUES (1, '查询权限列表', '/admin/permission/permissionList', '查询权限列表');
+INSERT INTO `ms_permission` VALUES (1, 'checkPermission', '/admin/permission/permissionList', 'checkPermission');
 INSERT INTO `ms_permission` VALUES (2, '11', '11', '111');
 INSERT INTO `ms_permission` VALUES (7, '1213', '123', '123');
-INSERT INTO `ms_permission` VALUES (8, '删除权限', '/admin/permission/add', '删除权限');
+INSERT INTO `ms_permission` VALUES (8, 'deletePermission', '/admin/permission/add', 'deletePermission');
 
 -- ----------------------------
 -- Table structure for ms_sys_log
@@ -233,18 +233,18 @@ CREATE TABLE `ms_sys_log`  (
 DROP TABLE IF EXISTS `ms_sys_user`;
 CREATE TABLE `ms_sys_user`  (
   `id` bigint(0) NOT NULL AUTO_INCREMENT,
-  `account` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '账号',
-  `admin` bit(1) NULL DEFAULT NULL COMMENT '是否管理员',
-  `avatar` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '头像',
-  `create_date` bigint(0) NULL DEFAULT NULL COMMENT '注册时间',
-  `deleted` bit(1) NULL DEFAULT NULL COMMENT '是否删除',
-  `email` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '邮箱',
-  `last_login` bigint(0) NULL DEFAULT NULL COMMENT '最后登录时间',
-  `mobile_phone_number` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '手机号',
-  `nickname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '昵称',
-  `password` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '密码',
-  `salt` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '加密盐',
-  `status` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '状态',
+  `account` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'account',
+  `admin` bit(1) NULL DEFAULT NULL COMMENT 'ifAdmin',
+  `avatar` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'avatar',
+  `create_date` bigint(0) NULL DEFAULT NULL COMMENT 'registration time',
+  `deleted` bit(1) NULL DEFAULT NULL COMMENT 'deleted',
+  `email` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'mail box',
+  `last_login` bigint(0) NULL DEFAULT NULL COMMENT 'final login time',
+  `mobile_phone_number` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'mobile_phone_number',
+  `nickname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'nickname',
+  `password` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'password',
+  `salt` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'salt',
+  `status` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'status',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1404448588146192387 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
