@@ -27,5 +27,15 @@ We will use SpringBoot to build our Back-end.
 
 --We take an opinionated view of the Spring platform and third-party libraries so you can get started with minimum fuss. Most Spring Boot applications need minimal Spring configuration.
 
+## ToDo List
 
-
+ - [ ]  Nickname spelling - 1 
+ - [ ]  Comment successful 
+ - [ ]  Search - no search test case
+ - [ ]  changing website name
+ 
+ 
+ ### Optional feature
+ 
+ - [ ]  multi language/or able to translate
+ - [ ]  social networking links
