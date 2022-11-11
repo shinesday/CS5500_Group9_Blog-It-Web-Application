@@ -1,9 +1,9 @@
 <template>
   <el-card>
-    <h1 class="me-author-name">Autor 1</h1>
+    <h1 class="me-author-name">Group 9</h1>
     <div class="me-author-description">
-      <span><i class="el-icon-location-outline"></i> &nbsp;Location 1</span>
-      <span><i class="me-icon-job"></i> &nbsp;java specialist</span>
+      <span><i class="el-icon-location-outline"></i> &nbsp;BAY AREA VILLAGE</span>
+      <span><i class="me-icon-job"></i> &nbsp;java TECH LEAD</span>
     </div>
     <div class="me-author-tool">
       <i @click="showTool(qq)" :title="qq.title" class="iconfont icon-qq"></i>
@@ -20,7 +20,7 @@
       return {
         qq: {title: 'QQ', message: '723663826'},
         bilibili: {
-          title: 'BiliBili',
+          title: 'bilibi',
           message: '<a target="_blank" href="https://space.bilibili.com/473844125">https://space.bilibili.com/473844125</a>'
         }
       }

@@ -5,7 +5,7 @@
     <div
       style="height: 40px;margin-top: 10px;z-index: 1"
       v-loading="loading"
-      element-loading-text="Loading..."
+      element-loading-text="Loading"
       element-loading-spinner="el-icon-loading"
       element-loading-background="rgba(245,245,245)"></div>
   </div>

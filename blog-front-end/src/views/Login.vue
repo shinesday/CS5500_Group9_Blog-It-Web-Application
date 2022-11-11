@@ -1,15 +1,15 @@
 <template>
-  <div id="login" v-title data-title="Login - Group 9">
+  <div id="login" v-title data-title="login - group 9">
     <!--<video preload="auto" class="me-video-player" autoplay="autoplay" loop="loop">
           <source src="../../static/vedio/sea.mp4" type="video/mp4">
       </video>-->
 
     <div class="me-login-box me-login-box-radius">
-      <h1>Group 9 Login</h1>
+      <h1>group9 login</h1>
 
       <el-form ref="userForm" :model="userForm" :rules="rules">
         <el-form-item prop="account">
-          <el-input placeholder="Username" v-model="userForm.account"></el-input>
+          <el-input placeholder="username" v-model="userForm.account"></el-input>
         </el-form-item>
 
         <el-form-item prop="password">
@@ -17,7 +17,7 @@
         </el-form-item>
 
         <el-form-item size="small" class="me-login-button">
-          <el-button type="primary" @click.native.prevent="login('userForm')">Login</el-button>
+          <el-button type="primary" @click.native.prevent="login('userForm')">login</el-button>
         </el-form-item>
       </el-form>
 
@@ -36,12 +36,12 @@
         },
         rules: {
           account: [
-            {required: true, message: 'Please enter username', trigger: 'blur'},
-            {max: 10, message: 'cannot be greater than 10 characters', trigger: 'blur'}
+            {required: true, message: 'enter usernmae', trigger: 'blur'},
+            {max: 10, message: 'no longer than 10', trigger: 'blur'}
           ],
           password: [
-            {required: true, message: 'Please enter password', trigger: 'blur'},
-            {max: 10, message: 'cannot be greater than 10 characters', trigger: 'blur'}
+            {required: true, message: 'enter password', trigger: 'blur'},
+            {max: 10, message: 'no longer than 10', trigger: 'blur'}
           ]
         }
       }

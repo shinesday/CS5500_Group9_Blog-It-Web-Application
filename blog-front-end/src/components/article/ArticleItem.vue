@@ -3,7 +3,7 @@
     <div class="me-article-header">
 
       <a @click="view(id)" class="me-article-title">{{title}}</a>
-      <el-button v-if="weight > 0" class="me-article-icon" type="text">Put on top</el-button>
+      <el-button v-if="weight > 0" class="me-article-icon" type="text">TOP</el-button>
       <span class="me-pull-right me-article-count">
 	    	<i class="me-icon-comment"></i>&nbsp;{{commentCounts}}
 	    </span>
@@ -17,7 +17,7 @@
     </div>
     <div class="me-article-footer">
 	  	<span class="me-article-author">
-	    	<i class="me-icon-author"></i>&nbsp;{{author}}
+	    	<i class="me-icon-author"></i>&nbsp;{{author.nickname}}
 	    </span>
 
       <el-tag v-for="t in tags" :key="t.tagName" size="mini" type="success">{{t.tagName}}</el-tag>
@@ -36,7 +36,7 @@
   export default {
     name: 'ArticleItem',
     props: {
-      id: Number,
+      id: String,
       weight: Number,
       title: String,
       commentCounts: Number,

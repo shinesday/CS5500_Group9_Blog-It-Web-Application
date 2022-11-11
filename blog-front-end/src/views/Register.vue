@@ -1,27 +1,27 @@
 <template>
-  <div id="register" v-title data-title="Register - Group 9">
+  <div id="register" v-title data-title="register - group 9">
     <!--<video preload="auto" class="me-video-player" autoplay="autoplay" loop="loop">
           <source src="../../static/vedio/sea.mp4" type="video/mp4">
       </video>-->
 
     <div class="me-login-box me-login-box-radius">
-      <h1> Group 9 Register</h1>
+      <h1>group 9 register</h1>
 
       <el-form ref="userForm" :model="userForm" :rules="rules">
         <el-form-item prop="account">
-          <el-input placeholder="Username" v-model="userForm.account"></el-input>
+          <el-input placeholder="username" v-model="userForm.account"></el-input>
         </el-form-item>
 
         <el-form-item prop="nickname">
-          <el-input placeholder="Nickname" v-model="userForm.nickname"></el-input>
+          <el-input placeholder="nikename" v-model="userForm.nickname"></el-input>
         </el-form-item>
 
         <el-form-item prop="password">
-          <el-input placeholder="password" v-model="userForm.password"></el-input>
+          <el-input placeholder="password" type="password" v-model="userForm.password"></el-input>
         </el-form-item>
 
         <el-form-item size="small" class="me-login-button">
-          <el-button type="primary" @click.native.prevent="register('userForm')">Register</el-button>
+          <el-button type="primary" @click.native.prevent="register('userForm')">register</el-button>
         </el-form-item>
       </el-form>
 
@@ -45,16 +45,16 @@
         },
         rules: {
           account: [
-            {required: true, message: 'Please enter your username', trigger: 'blur'},
-            {max: 10, message: 'cannot be greater than 10 characters', trigger: 'blur'}
+            {required: true, message: 'enter username', trigger: 'blur'},
+            {max: 10, message: 'no longer than 10', trigger: 'blur'}
           ],
           nickname: [
-            {required: true, message: 'Please enter your nickname', trigger: 'blur'},
-            {max: 10, message: 'cannot be greater than 10 characters', trigger: 'blur'}
+            {required: true, message: 'enter nikename', trigger: 'blur'},
+            {max: 10, message: '不能大于10个字符', trigger: 'blur'}
           ],
           password: [
-            {required: true, message: 'Please enter your password', trigger: 'blur'},
-            {max: 10, message: 'cannot be greater than 10 characters', trigger: 'blur'}
+            {required: true, message: 'enter password', trigger: 'blur'},
+            {max: 10, message: 'no longer than 10', trigger: 'blur'}
           ]
         }
 
@@ -67,7 +67,7 @@
           if (valid) {
 
             that.$store.dispatch('register', that.userForm).then(() => {
-              that.$message({message: 'Successfully Registered', type: 'success', showClose: true});
+              that.$message({message: 'success write your article', type: 'success', showClose: true});
               that.$router.push({path: '/'})
             }).catch((error) => {
               if (error !== 'error') {

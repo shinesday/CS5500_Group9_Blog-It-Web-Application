@@ -54,11 +54,20 @@ export function getArticlesByTag(id) {
 }
 
 
-export function publishArticle(article) {
+export function publishArticle(article,token) {
   return request({
+    headers: {'Authorization': token},
     url: '/articles/publish',
     method: 'post',
     data: article
+  })
+}
+
+export function searchArticle(search) {
+  return request({
+    url: '/articles/search',
+    method: 'post',
+    data: {"search":search}
   })
 }
 

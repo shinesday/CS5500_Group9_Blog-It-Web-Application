@@ -8,11 +8,11 @@ export function getCommentsByArticle(id) {
   })
 }
 
-export function publishComment(comment) {
+export function publishComment(comment,token) {
   return request({
+    headers: {'Authorization': token},
     url: '/comments/create/change',
     method: 'post',
     data: comment
   })
 }
-

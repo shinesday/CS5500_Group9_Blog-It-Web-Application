@@ -1,9 +1,9 @@
-import Vuex from 'vuex'
-import Vue from 'vue'
+// import Vuex from 'vuex'
+// import Vue from 'vue'
 import {getToken, setToken, removeToken} from '@/request/token'
 import {login, getUserInfo, logout, register} from '@/api/login'
 
-Vue.use(Vuex);
+// Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
@@ -46,8 +46,9 @@ export default new Vuex.Store({
         })
       })
     },
-
+    // 获取用户信息
     getUserInfo({commit, state}) {
+
       let that = this
       return new Promise((resolve, reject) => {
         getUserInfo(state.token).then(data => {
@@ -56,40 +57,47 @@ export default new Vuex.Store({
             commit('SET_NAME', data.data.nickname)
             commit('SET_AVATAR', data.data.avatar)
             commit('SET_ID', data.data.id)
+            resolve(data)
           } else {
             commit('SET_ACCOUNT', '')
             commit('SET_NAME', '')
             commit('SET_AVATAR', '')
             commit('SET_ID', '')
             removeToken()
+            resolve(data)
           }
-          resolve(data)
+
         }).catch(error => {
+          commit('SET_ACCOUNT', '')
+          commit('SET_NAME', '')
+          commit('SET_AVATAR', '')
+          commit('SET_ID', '')
+          removeToken()
           reject(error)
         })
       })
     },
-    // logout
+    // 退出
     logout({commit, state}) {
       return new Promise((resolve, reject) => {
         logout(state.token).then(data => {
-			if(data.success){
+          if(data.success){
 
-			  commit('SET_TOKEN', '')
-			  commit('SET_ACCOUNT', '')
-			  commit('SET_NAME', '')
-			  commit('SET_AVATAR', '')
-			  commit('SET_ID', '')
-			  removeToken()
-			  resolve()
-		  }
+            commit('SET_TOKEN', '')
+            commit('SET_ACCOUNT', '')
+            commit('SET_NAME', '')
+            commit('SET_AVATAR', '')
+            commit('SET_ID', '')
+            removeToken()
+            resolve()
+          }
 
         }).catch(error => {
           reject(error)
         })
       })
     },
-    
+    // 前端 登出
     fedLogOut({commit}) {
       return new Promise(resolve => {
         commit('SET_TOKEN', '')
@@ -106,9 +114,13 @@ export default new Vuex.Store({
     register({commit}, user) {
       return new Promise((resolve, reject) => {
         register(user.account, user.nickname, user.password).then((data) => {
-          commit('SET_TOKEN', data.data)
-          setToken(data.data)
-          resolve()
+          if(data.success){
+            commit('SET_TOKEN', data.data)
+            setToken(data.data)
+            resolve()
+          }else{
+            reject(data.msg)
+          }
         }).catch((error) => {
           reject(error)
         })

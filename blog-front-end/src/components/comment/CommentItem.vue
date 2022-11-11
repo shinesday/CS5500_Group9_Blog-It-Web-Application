@@ -7,7 +7,7 @@
       <div class="me-view-info">
         <span class="me-view-nickname">{{comment.author.nickname}}</span>
         <div class="me-view-meta">
-          <span>{{rootCommentCounts - index}}Level</span>
+          <span>{{rootCommentCounts - index}}LEVEL</span>
           <span>{{comment.createDate | format}}</span>
         </div>
       </div>
@@ -18,8 +18,8 @@
         <!--<a class="me-view-comment-tool">-->
         <!--<i class="el-icon-caret-top"></i> 20-->
         <!--</a>-->
-        <a class="me-view-comment-tool" @click="showComment(-1)">
-          <i class="me-icon-comment"></i>&nbsp; Comments
+        <a class="me-view-comment-tool" @click="showComment(-1,comment.author)">
+          <i class="me-icon-comment"></i>&nbsp; comment
         </a>
       </div>
 
@@ -34,26 +34,26 @@
           </div>
           <div class="me-view-meta">
             <span style="padding-right: 10px">{{c.createDate | format}}</span>
-            <a class="me-view-comment-tool" @click="showComment(c.id, c.author)">
-              <i class="me-icon-comment"></i>&nbsp;Reply
-            </a>
+          <!--  <a class="me-view-comment-tool" @click="showComment(c.id, c.author)">
+              <i class="me-icon-comment"></i>&nbsp;回复
+            </a> -->
           </div>
 
         </div>
 
         <div class="me-view-comment-write" v-show="commentShow">
+          <template>
+            <el-input
+              v-model="reply.content"
+              type="input"
+              style="width: 90%"
+              :placeholder="placeholder"
+              class="me-view-comment-text"
+              resize="none">
+            </el-input>
 
-          <el-input
-            v-model="reply.content"
-            type="input"
-            style="width: 90%"
-            :placeholder="placeholder"
-            class="me-view-comment-text"
-            resize="none">
-          </el-input>
-
-          <el-button style="margin-left: 8px" @click="publishComment()" type="text">Comments</el-button>
-
+            <el-button style="margin-left: 8px" @click="publishComment()" type="text">评论</el-button>
+        </template>
         </div>
 
       </div>
@@ -75,7 +75,7 @@
     },
     data() {
       return {
-        placeholder: 'Your reply...',
+        placeholder: '你的评论...',
         commentShow: false,
         commentShowIndex: '',
         reply: this.getEmptyReply()
@@ -86,14 +86,12 @@
         this.reply = this.getEmptyReply()
 
         if (this.commentShowIndex !== commentShowIndex) {
-
           if (toUser) {
             this.placeholder = `@${toUser.nickname} `
-            this.reply.toUser = toUser
+            this.reply.toUserId = toUser.id
           } else {
-            this.placeholder = 'Your reply...'
+            this.placeholder = 'your comment...'
           }
-
           this.commentShow = true
           this.commentShowIndex = commentShowIndex
         } else {
@@ -106,31 +104,30 @@
         if (!that.reply.content) {
           return;
         }
-
-        publishComment(that.reply).then(data => {
-          that.$message({type: 'success', message: 'Replied', showClose: true})
-          if(!that.comment.childrens){
-            that.comment.childrens = []
+        publishComment(that.reply,this.$store.state.token).then(data => {
+          if(data.success){
+            that.$message({type: 'success', message: 'comment success', showClose: true})
+            if(!that.comment.childrens){
+              that.comment.childrens = []
+            }
+            that.comment.childrens.unshift(data.data)
+            that.$emit('commentCountsIncrement')
+            this.showComment(this.commentShowIndex)
+          }else{
+             that.$message({type: 'error', message: data.msg, showClose: true})
           }
-          that.comment.childrens.unshift(data.data)
-          that.$emit('commentCountsIncrement')
-          that.showComment(that.commentShowIndex)
         }).catch(error => {
           if (error !== 'error') {
-            that.$message({type: 'error', message: 'Cannot reply', showClose: true})
+            that.$message({type: 'error', message: 'comment fail', showClose: true})
           }
         })
 
       },
       getEmptyReply() {
         return {
-          article: {
-            id: this.articleId
-          },
-          parent: {
-            id: this.comment.id
-          },
-          toUser: '',
+          articleId: this.articleId,
+          parent: this.comment.id,
+          toUserId: '',
           content: ''
         }
       }

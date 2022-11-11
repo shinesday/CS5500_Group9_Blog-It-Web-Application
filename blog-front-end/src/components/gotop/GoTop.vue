@@ -31,6 +31,9 @@
       }
     },
     mounted() {
+      /**
+       * 等到整个视图都渲染完毕
+       */
       this.$nextTick(function () {
         window.addEventListener('scroll', this.needToTop);
       });

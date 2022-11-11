@@ -88,7 +88,7 @@
 
         }).catch(error => {
           if (error !== 'error') {
-            that.$message({type: 'error', message: 'Article failed to load', showClose: true})
+            that.$message({type: 'error', message: 'article category loading failing', showClose: true})
           }
         }).finally(() => {
           that.loading = false

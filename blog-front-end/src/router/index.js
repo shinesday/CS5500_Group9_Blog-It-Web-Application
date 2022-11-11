@@ -1,17 +1,26 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+// import Vue from 'vue'
+// import VueRouter from 'vue-router'
 import Home from '@/Home'
+/*import Index from '@/views/Index'
+import Login from '@/views/Login'
+import Register from '@/views/Register'
+import Log from '@/views/Log'
+import MessageBoard from '@/views/MessageBoard'
+import BlogWrite from '@/views/blog/BlogWrite'
+import BlogView from '@/views/blog/BlogView'
+import BlogAllCategoryTag from '@/views/blog/BlogAllCategoryTag'
+import BlogCategoryTag from '@/views/blog/BlogCategoryTag'*/
 
-import {Message} from 'element-ui';
+// import {Message} from 'element-ui';
 
 
 import store from '@/store'
 
 import {getToken} from '@/request/token'
 
-Vue.use(Router)
+// Vue.use(VueRouter)
 
-const router = new Router({
+const router = new VueRouter({
   routes: [
     {
       path: '/write/:id?',
@@ -78,21 +87,27 @@ router.beforeEach((to, from, next) => {
       next({path: '/'})
     } else {
       if (store.state.account.length === 0) {
-        store.dispatch('getUserInfo').then(data => { //get customer info
-          next()
+        store.dispatch('getUserInfo').then(data => { //获取用户信息
+            next()
         }).catch(() => {
+          this.$message({
+            type: 'warning',
+            showClose: true,
+            message: 'timeout'
+          })
           next({path: '/'})
         })
       } else {
+
         next()
       }
     }
   } else {
     if (to.matched.some(r => r.meta.requireLogin)) {
-      Message({
+      this.$message({
         type: 'warning',
         showClose: true,
-        message: 'Please login first'
+        message: 'please login'
       })
 
     }

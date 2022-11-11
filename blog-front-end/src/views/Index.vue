@@ -1,5 +1,5 @@
 <template>
-  <div v-title data-title="Blog">
+  <div v-title data-title="group 9">
     <el-container>
 
       <el-main class="me-articles">
@@ -13,11 +13,11 @@
         <card-me class="me-area"></card-me>
         <card-tag :tags="hotTags"></card-tag>
 
-        <card-article cardHeader="Hottest Article" :articles="hotArticles"></card-article>
+        <card-article cardHeader="hot articles" :articles="hotArticles"></card-article>
 
-        <card-archive cardHeader="Archives" :archives="archives"></card-archive>
+        <card-archive cardHeader="articles archives" :archives="archives"></card-archive>
 
-        <card-article cardHeader="Newest Article" :articles="newArticles"></card-article>
+        <card-article cardHeader="new articles" :articles="newArticles"></card-article>
 
       </el-aside>
 
@@ -59,7 +59,7 @@
           that.hotArticles = data.data
         }).catch(error => {
           if (error !== 'error') {
-            that.$message({type: 'error', message: 'Hottest article failed to load', showClose: true})
+            that.$message({type: 'error', message: 'hot articles loading fail!', showClose: true})
           }
 
         })
@@ -71,7 +71,7 @@
           that.newArticles = data.data
         }).catch(error => {
           if (error !== 'error') {
-            that.$message({type: 'error', message: 'Newest article failed to load', showClose: true})
+            that.$message({type: 'error', message: 'hot articles loading fail!', showClose: true})
           }
 
         })
@@ -83,7 +83,7 @@
           that.hotTags = data.data
         }).catch(error => {
           if (error !== 'error') {
-            that.$message({type: 'error', message: 'Hottest tag failed to load', showClose: true})
+            that.$message({type: 'error', message: 'hot articles loading fail!', showClose: true})
           }
 
         })
@@ -93,7 +93,7 @@
           this.archives = data.data
         })).catch(error => {
           if (error !== 'error') {
-            that.$message({type: 'error', message: 'Archives failed to load!', showClose: true})
+            that.$message({type: 'error', message: 'hot articles loading fail!', showClose: true})
           }
         })
       }

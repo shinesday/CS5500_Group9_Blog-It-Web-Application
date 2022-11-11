@@ -1,5 +1,5 @@
-import axios from 'axios'
-import {Message} from 'element-ui'
+// import axios from 'axios'
+// import {Message} from 'element-ui'
 import store from '@/store'
 import {getToken} from '@/request/token'
 
@@ -8,7 +8,7 @@ const service = axios.create({
   timeout: 10000
 })
 
-//request interceptor
+//request拦截器
 service.interceptors.request.use(config => {
 
   if (store.state.token) {
@@ -20,44 +20,43 @@ service.interceptors.request.use(config => {
   Promise.reject(error)
 })
 
-// respone interceptor
+// respone拦截器
 service.interceptors.response.use(
   response => {
 
-    //global Session timeout
+    //全局统一处理 Session超时
     if (response.headers['session_time_out'] == 'timeout') {
       store.dispatch('fedLogOut')
     }
 
     const res = response.data;
 
-    //0 -> succcess
+    //0 为成功状态
     if (res.code !== 200) {
 
-      //90001 Session timeout
+      //90001 Session超时
       if (res.code === 90001) {
         return Promise.reject('error');
       }
 
-      //20001 not logged in
+      //20001 用户未登录
       if (res.code === 90002) {
 
-        Message({
+        this.$message({
           type: 'warning',
           showClose: true,
-          message: 'Not logged in or login timeout, please log in again!'
+          message: 'cannot login'
         })
 
         return Promise.reject('error');
       }
 
-
+      //70001 权限认证错误
       if (res.code === 70001) {
-        console.info('Permission authentication error')
-        Message({
+        this.$message({
           type: 'warning',
           showClose: true,
-          message: 'No permission to access it'
+          message: 'you have no access'
         })
         return Promise.reject('error');
       }
@@ -68,10 +67,10 @@ service.interceptors.response.use(
     }
   },
   error => {
-    Message({
+    this.$message({
       type: 'warning',
       showClose: true,
-      message: 'Connection timeout'
+      message: 'Timeout'
     })
     return Promise.reject('error')
   })

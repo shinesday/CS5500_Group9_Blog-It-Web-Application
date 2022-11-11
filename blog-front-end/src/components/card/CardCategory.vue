@@ -2,12 +2,12 @@
 
   <el-card :body-style="{ padding: '8px 18px' }">
     <div slot="header" class="me-category-header">
-      <span>Newest Articles</span>
+      <span>最新文章</span>
     </div>
 
     <ul class="me-category-list">
-      <li class="me-category-item" v-for="l in 3" :key="l"><a>Title 1 Title 1</a></li>
-      <li class="me-category-item" v-for="l in 3" :key="l"><a>Built element-ui using Vue as front-end</a></li>
+      <li class="me-category-item" v-for="l in 3" :key="l"><a>why we are so rich</a></li>
+      <li class="me-category-item" v-for="l in 3" :key="l"><a>build front work</a></li>
 
     </ul>
   </el-card>

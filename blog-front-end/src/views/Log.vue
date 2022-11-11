@@ -3,31 +3,31 @@
     <el-container class="me-area">
       <el-main class="me-main">
         <!--<el-steps class="me-log-box" :space="100"  direction="vertical">
-                 <el-step title="Step 1" status="process"  icon="el-icon-time" description="test"></el-step>
-                 <el-step title="Step 2" status="process" icon="el-icon-time"></el-step>
-                 <el-step title="Step 3" status="process" icon="el-icon-time" description="test"></el-step>
-                   <el-step title="Step 3" status="process" icon="el-icon-time" description="test"></el-step>
+                 <el-step title="步骤 1" status="process"  icon="el-icon-time" description="步骤 1步骤 1步骤 1步骤 1步骤 1"></el-step>
+                 <el-step title="步骤 2" status="process" icon="el-icon-time"></el-step>
+                 <el-step title="步骤 3" status="process" icon="el-icon-time" description="这是一段很长很长很长的描述性文字"></el-step>
+                   <el-step title="步骤 3" status="process" icon="el-icon-time" description="这是一段很长很长很长的描述性文字"></el-step>
 
-                 <el-step title="Step 3" status="process" icon="el-icon-time" description="test"></el-step>
-                 <el-step title="Step 3" status="process" icon="el-icon-time" description="test"></el-step>
-                 <el-step title="Step 3" status="process" icon="el-icon-time" description="test"></el-step>
-                 <el-step title="Step 3" status="process" icon="el-icon-time" description="test"></el-step>
-                 <el-step title="Step 3" icon="el-icon-time" description="test"></el-step>
-                 <el-step title="Step 3" icon="el-icon-time" description="test"></el-step>
-                 <el-step title="Step 3" icon="el-icon-time" description="test"></el-step>
-                 <el-step title="Step 3" icon="el-icon-time" description="test"></el-step>
-                 <el-step title="Step 3" icon="el-icon-time" description="test"></el-step>
-                 <el-step title="Step 3" icon="el-icon-time" description="test"></el-step>
-                 <el-step title="Step 3" icon="el-icon-time" description="test"></el-step>
-                 <el-step title="Step 3" icon="el-icon-time" description="test"></el-step>
-                 <el-step title="Step 3" icon="el-icon-time" description="test"></el-step>
-                 <el-step title="Step 3" icon="el-icon-time" description="test"></el-step>
+                 <el-step title="步骤 3" status="process" icon="el-icon-time" description="这是一段很长很长很长的描述性文字"></el-step>
+                 <el-step title="步骤 3" status="process" icon="el-icon-time" description="这是一段很长很长很长的描述性文字"></el-step>
+                 <el-step title="步骤 3" status="process" icon="el-icon-time" description="这是一段很长很长很长的描述性文字"></el-step>
+                 <el-step title="步骤 3" status="process" icon="el-icon-time" description="这是一段很长很长很长的描述性文字"></el-step>
+                 <el-step title="步骤 3" icon="el-icon-time" description="这是一段很长很长很长的描述性文字"></el-step>
+                 <el-step title="步骤 3" icon="el-icon-time" description="这是一段很长很长很长的描述性文字"></el-step>
+                 <el-step title="步骤 3" icon="el-icon-time" description="这是一段很长很长很长的描述性文字"></el-step>
+                 <el-step title="步骤 3" icon="el-icon-time" description="这是一段很长很长很长的描述性文字"></el-step>
+                 <el-step title="步骤 3" icon="el-icon-time" description="这是一段很长很长很长的描述性文字"></el-step>
+                 <el-step title="步骤 3" icon="el-icon-time" description="这是一段很长很长很长的描述性文字"></el-step>
+                 <el-step title="步骤 3" icon="el-icon-time" description="这是一段很长很长很长的描述性文字"></el-step>
+                 <el-step title="步骤 3" icon="el-icon-time" description="这是一段很长很长很长的描述性文字"></el-step>
+                 <el-step title="步骤 3" icon="el-icon-time" description="这是一段很长很长很长的描述性文字"></el-step>
+                 <el-step title="步骤 3" icon="el-icon-time" description="这是一段很长很长很长的描述性文字"></el-step>
 
               </el-steps>-->
         <pre>
 
       ```
-      # nothing
+      # 无
 
       ```
 			 </pre>
@@ -44,7 +44,7 @@
     },
     computed: {
       title (){
-        return 'Blog - Group 9'
+        return 'blog - group 9'
       }
     }
   }
