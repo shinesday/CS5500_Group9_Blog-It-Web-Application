@@ -22,6 +22,13 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
+  externals:{
+    'vue':'Vue',
+    'element-ui':'ElementUI',
+    'vue-router':'VueRouter',
+    'vuex':'Vuex',
+    'axios':'axios'
+  },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
