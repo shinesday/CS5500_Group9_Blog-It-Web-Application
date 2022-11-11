@@ -7,18 +7,18 @@ import java.util.List;
 
 public interface TagMapper extends BaseMapper<Tag> {
     /**
-     * Query list of tags based on article id
+     * 根据文章id查询标签列表
      * @param articleId
      * @return
      */
     List<Tag> findTagsByArticleId(Long articleId);
 
     /**
-     * Query the hottest tags, select top-n
+     * 查询最热的标签 前n条
      * @param limit
      * @return
      */
-    List<Long> finHotsTagIds(int limit);
+    List<Long> findHotsTagIds(int limit);
 
     List<Tag> findTagsByTagIds(List<Long> tagIds);
 }

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @MapperScan("com.mszlu.blog.dao.mapper")
 public class MybatisPlusConfig {
 
-    //paging plug-in
+    //分页插件
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor(){
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
