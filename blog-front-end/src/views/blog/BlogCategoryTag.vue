@@ -57,9 +57,9 @@
     computed: {
       title() {
         if(this.$route.params.type === 'tag'){
-          return `${this.ct.tagName} - tag - Group 9`
+          return `${this.ct.tagName} - tag - BlogIT`
         }
-        return `${this.ct.categoryName} - articles category - group 9`
+        return `${this.ct.categoryName} - articles category - BlogIT`
       }
     },
     methods: {

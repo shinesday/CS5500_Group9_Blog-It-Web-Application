@@ -3,7 +3,7 @@
     <div class="me-footer">
       <p>Designed by
         <strong>
-          <router-link to="/" class="me-login-design-color">Group 9</router-link>
+          <router-link to="/" class="me-login-design-color">BlogIT</router-link>
         </strong>
       </p>
     </div>

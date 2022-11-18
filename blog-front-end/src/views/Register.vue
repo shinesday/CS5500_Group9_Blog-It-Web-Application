@@ -1,11 +1,11 @@
 <template>
-  <div id="register" v-title data-title="register - group 9">
+  <div id="register" v-title data-title="register - BlogIT">
     <!--<video preload="auto" class="me-video-player" autoplay="autoplay" loop="loop">
           <source src="../../static/vedio/sea.mp4" type="video/mp4">
       </video>-->
 
     <div class="me-login-box me-login-box-radius">
-      <h1>group 9 register</h1>
+      <h1>BlogIT register</h1>
 
       <el-form ref="userForm" :model="userForm" :rules="rules">
         <el-form-item prop="account">
@@ -13,7 +13,7 @@
         </el-form-item>
 
         <el-form-item prop="nickname">
-          <el-input placeholder="nikename" v-model="userForm.nickname"></el-input>
+          <el-input placeholder="Nickname " v-model="userForm.nickname"></el-input>
         </el-form-item>
 
         <el-form-item prop="password">

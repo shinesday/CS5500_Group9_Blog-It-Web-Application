@@ -75,7 +75,7 @@
     },
     data() {
       return {
-        placeholder: '你的评论...',
+        placeholder: 'your comment...',
         commentShow: false,
         commentShowIndex: '',
         reply: this.getEmptyReply()

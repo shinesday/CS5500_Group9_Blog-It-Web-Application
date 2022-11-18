@@ -24,7 +24,7 @@
     },
     computed: {
       title (){
-        return 'comment board - group 9'
+        return 'comment board - BlogIT'
       }
     }
   }

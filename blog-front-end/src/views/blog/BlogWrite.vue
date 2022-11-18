@@ -49,7 +49,7 @@
             </el-select>
           </el-form-item>
 
-          <el-form-item label="文章标签" prop="tags">
+          <el-form-item label="article Tag" prop="tags">
             <el-checkbox-group v-model="articleForm.tags">
               <el-checkbox v-for="t in tags" :key="t.id" :label="t.id" name="tags">{{t.tagName}}</el-checkbox>
             </el-checkbox-group>
@@ -57,7 +57,7 @@
         </el-form>
         <div slot="footer" class="dialog-footer">
           <el-button @click="publishVisible = false">cancel</el-button>
-          <el-button type="primary" @click="publish('articleForm')">发布</el-button>
+          <el-button type="primary" @click="publish('articleForm')">Publish</el-button>
         </div>
       </el-dialog>
     </el-container>
@@ -144,7 +144,7 @@
     },
     computed: {
       title (){
-        return 'articles - group 9'
+        return 'articles - BlogIT'
 		}
 	},
     methods: {

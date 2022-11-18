@@ -1,5 +1,5 @@
 <template>
-  <div id="login" v-title data-title="login - group 9">
+  <div id="login" v-title data-title="login - BlogIT">
     <!--<video preload="auto" class="me-video-player" autoplay="autoplay" loop="loop">
           <source src="../../static/vedio/sea.mp4" type="video/mp4">
       </video>-->

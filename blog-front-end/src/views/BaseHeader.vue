@@ -61,7 +61,7 @@
           <template v-else>
             <el-submenu index>
               <template slot="title">
-                <img class="me-header-picture" :src="user.avatar"/>
+                <img class="me-header-picture" src="../assets/img/default_avatar.png"/>
               </template>
               <el-menu-item index @click="logout"><i class="el-icon-back"></i>exit</el-menu-item>
             </el-submenu>

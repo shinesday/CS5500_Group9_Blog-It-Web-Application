@@ -59,7 +59,7 @@
     },
     computed: {
       title (){
-        return this.currentArchive + ' - article archive - group 9'
+        return this.currentArchive + ' - article archive - BlogIT'
       },
       currentArchive (){
         if(this.article.query.year && this.article.query.month){

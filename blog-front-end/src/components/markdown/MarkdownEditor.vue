@@ -2,6 +2,7 @@
   <mavon-editor
     class="me-editor"
     ref="md"
+    language = "en"
     v-model="editor.value"
     @imgAdd="imgAdd"
     v-bind="editor">

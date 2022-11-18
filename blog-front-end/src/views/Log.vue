@@ -44,7 +44,7 @@
     },
     computed: {
       title (){
-        return 'blog - group 9'
+        return 'blog - BlogIT'
       }
     }
   }

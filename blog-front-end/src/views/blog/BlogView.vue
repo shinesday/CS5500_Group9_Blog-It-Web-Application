@@ -160,7 +160,7 @@
         return default_avatar
       },
       title() {
-        return `${this.article.title} - article - group 9`
+        return `${this.article.title} - article - BlogIT`
       }
     },
     methods: {

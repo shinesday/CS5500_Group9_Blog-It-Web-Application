@@ -72,10 +72,10 @@
       },
       categoryTagTitle (){
         if(this.currentActiveName == 'category'){
-          return 'articles category - group 9'
+          return 'articles category - BlogIT'
         }
         console.info('dddd')
-        return 'Tag - group 9'
+        return 'Tag - BlogIT'
       }
     },
     methods: {

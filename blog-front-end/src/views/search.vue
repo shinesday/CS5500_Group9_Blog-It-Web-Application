@@ -1,5 +1,5 @@
 <template>
-  <div v-title data-title="Group 9">
+  <div v-title data-title="BlogIT">
     <el-container>
 
       <el-main class="me-articles">

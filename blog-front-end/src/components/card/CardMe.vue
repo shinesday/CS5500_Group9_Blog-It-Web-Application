@@ -1,6 +1,6 @@
 <template>
   <el-card>
-    <h1 class="me-author-name">Group 9</h1>
+    <h1 class="me-author-name">BlogIT</h1>
     <div class="me-author-description">
       <span><i class="el-icon-location-outline"></i> &nbsp;BAY AREA VILLAGE</span>
       <span><i class="me-icon-job"></i> &nbsp;java TECH LEAD</span>
