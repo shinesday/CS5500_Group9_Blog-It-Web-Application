@@ -245,15 +245,15 @@ public class ArticleServiceImpl implements ArticleService {
         queryWrapper.like(Article::getTitle,search);
         //select id,title from article order by view_counts desc limit 5
         List<Article> articles = articleMapper.selectList(queryWrapper);
-        
-        // FIXED !!!!!!!!
+
         if (articles.size() == 0) {
             Article notFound = new Article();
             notFound.setTitle("not found");
             notFound.setId((long) -10);
             articles.add(notFound);
         }
-        
+
+
         return Result.success(copyList(articles,false,false));
     }
 
