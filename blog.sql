@@ -169,7 +169,7 @@ CREATE TABLE `ms_comment`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `article_id`(`article_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1405209691876790275 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-
+alter TABLE ms_comment MODIFY COLUMN article_id BIGINT;
 -- ----------------------------
 -- Records of ms_comment
 -- ----------------------------
@@ -276,3 +276,7 @@ INSERT INTO `ms_tag` VALUES (7, '/static/tag/java.png', 'springmvc');
 INSERT INTO `ms_tag` VALUES (8, '/static/tag/css.png', '11');
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+
+
+
