@@ -39,3 +39,48 @@ We will use SpringBoot to build our Back-end.
  
  - [ ]  multi language/or able to translate
  - [ ]  social networking links
+# How to run the project for MacOS
+## 1. Pull the code from the remote github repository to your target folder
+
+git clone https://github.com/shinesday/CS5500_Group9_Blog-It-Web-Application.git
+
+## 2. Run the front end
+
+### 2.0. Open the front end project by clicking the blog-front-end folder in vscode.
+
+### 2.1. Enter the script below to run the front end:
+```
+npm start
+```
+## 3. Set up and run the backend server
+### 3.0. Open the blog-back-end folder by clicking the pom.xml file.
+
+### 3.1. Set up MySQL
+
+> Download MySQL by the instruction below:
+
+https://dev.mysql.com/doc/refman/8.0/en/macos-installation-pkg.html
+
+> Open the MySQL workbench and create a new MySQL connection(The password set here are used later and should be noted down).
+
+> Enter into the new MySQL connection by clicking and create a new table named blog using the command below.
+```
+CREATE DATABASE blog;
+```
+Note the blog database should be set as default. Finally, run the given blog.sql script.
+
+> Edit the application.properties in the res subfolder under the blog-back-end main folder(the port should be 3306).
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=UTF-8&serverTimeZone=UTC
+spring.datasource.username=root
+spring.datasource.password=<your password>
+```
+### 3.2. Set up Redis by entering codes below into the terminal
+
+```
+brew install redis
+redis-server
+```
+### 3.3. Run the backend server by clicking the run button.
+
+
