@@ -53,7 +53,7 @@ git clone https://github.com/shinesday/CS5500_Group9_Blog-It-Web-Application.git
 npm start
 ```
 ## 3. Set up and run the backend server
-### 3.0. Open the blog-back-end folder by clicking the pom.xml file.
+### 3.0. Open the blog-back-end folder by clicking the pom.xml file with Java 1.8.
 
 ### 3.1. Set up MySQL
 
