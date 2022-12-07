@@ -35,24 +35,23 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 @WebAppConfiguration
 @RunWith(SpringRunner.class)
 public class CommentsControllerTest {
-    // 测试对象
+    // testing object
     @Autowired
     private CommentsController commentsController;
     @Autowired
     private MockMvc mvc;
     @Autowired
     private WebApplicationContext wac;
-    // 在运行测试之前准备测试对象
+    // Prepare test objects before running tests
     @Before
     public void setup() {
 
-        // 初始化测试对象...
+        // Initialize test object...
         commentsController = new CommentsController();
-        //初始化MockMvc对象
+        // Initialize the MockMvc object
         mvc = MockMvcBuilders.webAppContextSetup(wac).build();
     }
 
-    // 测试 comments() 方法
     @Test
     public void testComments() throws Exception {
         RequestBuilder request = null;
@@ -63,11 +62,9 @@ public class CommentsControllerTest {
 
     }
 
-    // 在运行完测试后清理测试环境
     @After
     public void tearDown() {
         commentsController = null;
-        // 清理其他测试资源...
     }
 }
 
