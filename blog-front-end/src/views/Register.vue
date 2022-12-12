@@ -50,7 +50,7 @@
           ],
           nickname: [
             {required: true, message: 'enter nikename', trigger: 'blur'},
-            {max: 10, message: '不能大于10个字符', trigger: 'blur'}
+            {max: 10, message: 'no longer than 10', trigger: 'blur'}
           ],
           password: [
             {required: true, message: 'enter password', trigger: 'blur'},
