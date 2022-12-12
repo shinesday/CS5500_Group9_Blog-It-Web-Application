@@ -126,7 +126,10 @@
 
       },
       handleSelect(item){
+      if (item.id != "-10") {
         this.$router.push({path: '/view/'+item.id})
+      }
+      
       }
     }
   }
