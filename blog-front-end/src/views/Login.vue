@@ -36,7 +36,7 @@
         },
         rules: {
           account: [
-            {required: true, message: 'enter usernmae', trigger: 'blur'},
+            {required: true, message: 'enter username', trigger: 'blur'},
             {max: 10, message: 'no longer than 10', trigger: 'blur'}
           ],
           password: [

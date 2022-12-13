@@ -1,7 +1,7 @@
 // import Vuex from 'vuex'
 // import Vue from 'vue'
-import {getToken, setToken, removeToken} from '@/request/token'
-import {login, getUserInfo, logout, register} from '@/api/login'
+import {getToken, setToken, removeToken} from '../request/token.js'
+import {login, getUserInfo, logout, register} from '../api/login.js'
 
 // Vue.use(Vuex);
 
