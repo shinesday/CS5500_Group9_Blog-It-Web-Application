@@ -30,7 +30,7 @@ public class ArticleController {
      */
     @PostMapping
     //加上此注解 代表要对此接口记录日志
-    @LogAnnotation(module="文章",operator="获取文章列表")
+    @LogAnnotation(module="Article",operator="Get list of articles")
     @Cache(expire = 5 * 60 * 1000,name = "listArticle")
     public Result listArticle(@RequestBody PageParams pageParams){
 //        int i = 10/0;
@@ -69,6 +69,7 @@ public class ArticleController {
     }
 
 
+    // Article details
     @PostMapping("view/{id}")
     @Cache(expire = 5 * 60 * 1000,name = "view_article")
     public Result findArticleById(@PathVariable("id") Long articleId){

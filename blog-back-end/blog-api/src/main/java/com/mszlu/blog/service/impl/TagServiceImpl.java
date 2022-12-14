@@ -44,14 +44,15 @@ public class TagServiceImpl implements TagService {
     @Override
     public Result hots(int limit) {
         /**
-         * 1. 标签所拥有的文章数量最多 最热标签
-         * 2. 查询 根据tag_id 分组 计数，从大到小 排列 取前 limit个
+         * 1.  Hot Tag ： Tags have the most articles
+         * 2. Query Group by tag_id
+         * Count, descending order， Take the first limit
          */
         List<Long> tagIds = tagMapper.findHotsTagIds(limit);
         if (CollectionUtils.isEmpty(tagIds)){
             return Result.success(Collections.emptyList());
         }
-        //需求的是 tagId 和 tagName  Tag对象
+        //require tagId  tagName  (Tag object)
         //select * from tag where id in (1,2,3,4)
         List<Tag> tagList = tagMapper.findTagsByTagIds(tagIds);
         return Result.success(tagList);

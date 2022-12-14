@@ -32,7 +32,7 @@ public class SysUserServiceImpl implements SysUserService {
             sysUser = new SysUser();
             sysUser.setId(1L);
             sysUser.setAvatar("/static/img/logo.b3a48c0.png");
-            sysUser.setNickname("码神之路");
+            sysUser.setNickname("Group33");
         }
         UserVo userVo  = new UserVo();
         BeanUtils.copyProperties(sysUser,userVo);
@@ -45,7 +45,7 @@ public class SysUserServiceImpl implements SysUserService {
         SysUser sysUser = sysUserMapper.selectById(id);
         if (sysUser == null){
             sysUser = new SysUser();
-            sysUser.setNickname("码神之路");
+            sysUser.setNickname("Group33");
         }
         return sysUser;
     }

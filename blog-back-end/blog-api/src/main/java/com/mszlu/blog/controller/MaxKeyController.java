@@ -28,6 +28,6 @@ public class MaxKeyController {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> forEntity = restTemplate.getForEntity(url, String.class);
         System.out.println(forEntity.getStatusCode() + "："+forEntity.getBody());
-        return "应该跳转应用首页 代表登录完成";
+        return "Should jump to the home page of the application, indicating that the login is complete";
     }
 }

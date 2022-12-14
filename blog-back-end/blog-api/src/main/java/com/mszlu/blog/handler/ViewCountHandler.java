@@ -28,7 +28,7 @@ public class ViewCountHandler {
     //@Scheduled(cron = "0 0 3 * * *") 生产环境 每天凌晨3点执行
     @Async("taskExecutor") //扔到线程池 执行
     public void scheduled(){
-        log.info("=====>>>>> 同步浏览量开始执行  {}",new DateTime().toString("yyyy-MM-dd HH:mm:ss"));
+        log.info("=====>>>>> Sync pageviews start executing  {}",new DateTime().toString("yyyy-MM-dd HH:mm:ss"));
         Map<Object, Object> countMap = redisTemplate.opsForHash().entries("view_count");
         for (Map.Entry<Object,Object> entry : countMap.entrySet()){
             Long articleId = Long.parseLong(entry.getKey().toString());
@@ -38,7 +38,7 @@ public class ViewCountHandler {
             article.setViewCounts(count);
             articleMapper.updateById(article);
         }
-        log.info("=====>>>>> 同步浏览量结束  {}",new DateTime().toString("yyyy-MM-dd HH:mm:ss"));
+        log.info("=====>>>>> Sync pageviews end  {}",new DateTime().toString("yyyy-MM-dd HH:mm:ss"));
     }
 
 }

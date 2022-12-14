@@ -44,6 +44,7 @@ public class LoginServiceImpl implements LoginService {
         if (StringUtils.isBlank(account) || StringUtils.isBlank(password)){
             return Result.fail(ErrorCode.PARAMS_ERROR.getCode(),ErrorCode.PARAMS_ERROR.getMsg());
         }
+        // md5 + salt
         password = DigestUtils.md5Hex(password + slat);
         SysUser sysUser = sysUserService.findUser(account,password);
         if (sysUser == null){
@@ -99,7 +100,7 @@ public class LoginServiceImpl implements LoginService {
         }
         SysUser sysUser =  sysUserService.findUserByAccount(account);
         if (sysUser != null){
-            return Result.fail(ErrorCode.ACCOUNT_EXIST.getCode(),"账户已经被注册了");
+            return Result.fail(ErrorCode.ACCOUNT_EXIST.getCode(),"Account has been registered");
         }
         sysUser = new SysUser();
         sysUser.setNickname(nickname);

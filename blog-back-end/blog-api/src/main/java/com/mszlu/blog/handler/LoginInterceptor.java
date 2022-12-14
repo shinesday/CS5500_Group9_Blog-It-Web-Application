@@ -45,14 +45,14 @@ public class LoginInterceptor implements HandlerInterceptor {
 
 
         if (StringUtils.isBlank(token)){
-            Result result = Result.fail(ErrorCode.NO_LOGIN.getCode(), "未登录");
+            Result result = Result.fail(ErrorCode.NO_LOGIN.getCode(), "Not logged in");
             response.setContentType("application/json;charset=utf-8");
             response.getWriter().print(JSON.toJSONString(result));
             return false;
         }
         SysUser sysUser = loginService.checkToken(token);
         if (sysUser == null){
-            Result result = Result.fail(ErrorCode.NO_LOGIN.getCode(), "未登录");
+            Result result = Result.fail(ErrorCode.NO_LOGIN.getCode(), "Not logged in");
             response.setContentType("application/json;charset=utf-8");
             response.getWriter().print(JSON.toJSONString(result));
             return false;
