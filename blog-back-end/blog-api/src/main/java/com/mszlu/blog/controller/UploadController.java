@@ -33,7 +33,7 @@ public class UploadController {
         if (upload){
             return Result.success(QiniuUtils.url + fileName);
         }
-        return Result.fail(20001,"上传失败");
+        return Result.fail(20001,"upload failed");
     }
 
 

@@ -18,10 +18,10 @@ public class JWTUtils {
         Map<String,Object> claims = new HashMap<>();
         claims.put("userId",userId);
         JwtBuilder jwtBuilder = Jwts.builder()
-                .signWith(SignatureAlgorithm.HS256, jwtToken) // 签发算法，秘钥为jwtToken
-                .setClaims(claims) // body数据，要唯一，自行设置
-                .setIssuedAt(new Date()) // 设置签发时间
-                .setExpiration(new Date(System.currentTimeMillis() + 24 * 60 * 60 * 60 * 1000));// 一天的有效时间
+                .signWith(SignatureAlgorithm.HS256, jwtToken) // Issuing algorithm, the key is jwt Token
+                .setClaims(claims) // The body data must be unique, set it yourself
+                .setIssuedAt(new Date()) // Set issue time
+                .setExpiration(new Date(System.currentTimeMillis() + 24 * 60 * 60 * 60 * 1000));// valid time of day
         String token = jwtBuilder.compact();
         return token;
     }
@@ -39,9 +39,9 @@ public class JWTUtils {
 
     public static void main(String[] args) {
         BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
-        //加密所需的salt
+        //The salt required for encryption
         textEncryptor.setPassword("mszlu_blog_$#@wzb_&^%$#");
-        //要加密的数据（数据库的用户名或密码）
+        //The data to encrypt (username or password for the database)
         String username = textEncryptor.encrypt("root");
         String password = textEncryptor.encrypt("root");
         System.out.println("username:"+username);

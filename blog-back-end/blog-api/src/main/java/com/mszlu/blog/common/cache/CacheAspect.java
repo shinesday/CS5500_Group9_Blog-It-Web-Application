@@ -40,9 +40,9 @@ public class CacheAspect {
     public Object around(ProceedingJoinPoint pjp){
         try {
             Signature signature = pjp.getSignature();
-            //类名
+
             String className = pjp.getTarget().getClass().getSimpleName();
-            //调用的方法名
+
             String methodName = signature.getName();
 
 
@@ -59,17 +59,17 @@ public class CacheAspect {
                 }
             }
             if (StringUtils.isNotEmpty(params)) {
-                //加密 以防出现key过长以及字符转义获取不到的情况
+
                 params = DigestUtils.md5Hex(params);
             }
             Method method = pjp.getSignature().getDeclaringType().getMethod(methodName, parameterTypes);
-            //获取Cache注解
+
             Cache annotation = method.getAnnotation(Cache.class);
-            //缓存过期时间
+
             long expire = annotation.expire();
-            //缓存名称
+
             String name = annotation.name();
-            //先从redis获取
+
             String redisKey = name + "::" + className+"::"+methodName+"::"+params;
             String redisValue = redisTemplate.opsForValue().get(redisKey);
             if (StringUtils.isNotEmpty(redisValue)){
