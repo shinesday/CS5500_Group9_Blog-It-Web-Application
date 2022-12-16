@@ -31,7 +31,7 @@ public class ArticleController {
     @PostMapping
     //加上此注解 代表要对此接口记录日志
     @LogAnnotation(module="Article",operator="Get list of articles")
-    @Cache(expire = 5 * 60 * 1000,name = "listArticle")
+    @Cache(expire = 5,name = "listArticle")
     public Result listArticle(@RequestBody PageParams pageParams){
 //        int i = 10/0;
         return articleService.listArticle(pageParams);
@@ -42,7 +42,7 @@ public class ArticleController {
      * @return
      */
     @PostMapping("hot")
-    @Cache(expire = 5 * 60 * 1000,name = "hot_article")
+    @Cache(expire = 5,name = "hot_article")
     public Result hotArticle(){
         int limit = 5;
         return articleService.hotArticle(limit);
@@ -53,7 +53,7 @@ public class ArticleController {
      * @return
      */
     @PostMapping("new")
-    @Cache(expire = 5 * 60 * 1000,name = "news_article")
+    @Cache(expire = 5,name = "news_article")
     public Result newArticles(){
         int limit = 5;
         return articleService.newArticles(limit);
@@ -71,7 +71,7 @@ public class ArticleController {
 
     // Article details
     @PostMapping("view/{id}")
-    @Cache(expire = 5 * 60 * 1000,name = "view_article")
+    @Cache(expire = 5,name = "view_article")
     public Result findArticleById(@PathVariable("id") Long articleId){
         return articleService.findArticleById(articleId);
     }
