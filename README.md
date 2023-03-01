@@ -6,6 +6,10 @@
 
 Blog is a fully-functional personal website exactly like Facebook HomePage. And it is developed based on the classic MEVN stack (MongoDB, ExpressJS, Vue and Node.JS).
 
+## Presentation PPT
+
+https://docs.google.com/presentation/d/18yL5SWtEW93Y9ZDeL-aJXVQfZTI2bvR7aULxVWWx0mw/edit?usp=sharing
+
 ## Sample Image
 https://assets-global.website-files.com/5e593fb060cf877cf875dd1f/60a98115ba76be068162f5ea_thumbnailimage.jpeg
 
